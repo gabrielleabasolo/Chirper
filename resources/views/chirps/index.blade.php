@@ -51,6 +51,8 @@
                             @endif
                         </div>
                         <p class="mt-4 text-lg text-gray-900">{{ $chirp->message }}</p>
+                        <button>^ {{$chirp->Upvotes}}</button>
+                        <button>v {{$chirp->Downvotes}}</button>
                     </div>
                 </div>
             @endforeach

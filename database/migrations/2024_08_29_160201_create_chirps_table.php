@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('message');
+            $table->integer('Upvotes')->default(0);
+            $table->integer('Downvotes')->default(0);
             $table->timestamps();
         });
     }

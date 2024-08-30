@@ -36,6 +36,9 @@ class ChirpController extends Controller
     {
         $validated = $request->validate([
             'message' => 'required|string|max:255',
+            'upvote' => 'boolean',
+            'downvote' => 'boolean',
+
         ]);
  
         $request->user()->chirps()->create($validated);
@@ -72,6 +75,8 @@ class ChirpController extends Controller
  
         $validated = $request->validate([
             'message' => 'required|string|max:255',
+            'upvote' => 'required|boolean',
+            'downvote' => 'required|boolean',
         ]);
  
         $chirp->update($validated);
